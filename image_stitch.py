@@ -14,8 +14,9 @@ class Stitcher:
         (kpsA, featuresA) = self.ComputingFeatures(imageA)
         (kpsB, featuresB) = self.ComputingFeatures(imageB)
         
-        
-        
+        cv2.imshow("imageA", imageA)
+        cv2.imshow("imageB", imageB)
+
         # match features between the two images
         M = self.matchKeypoints(kpsA, kpsB,
             featuresA, featuresB, ratio, reprojThresh)
@@ -83,8 +84,8 @@ class Stitcher:
   
 def main():
 
-    imageA = cv2.imread("/home/chandu/CV-Codes/images/carmel-00.png")
-    imageB = cv2.imread("/home/chandu/CV-Codes/images/carmel-01.png")
+    imageA = cv2.imread("/home/chandu/CV-Codes/images/im53.png")
+    imageB = cv2.imread("/home/chandu/CV-Codes/images/im52.png")
     imageA = imutils.resize(imageA, width=400)
     imageB = imutils.resize(imageB, width=400)
     
